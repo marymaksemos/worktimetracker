@@ -13,6 +13,30 @@ from database_manager import (
 )
 
 
+def print_employers(employers):
+    """
+    Print the list of employers.
+    """
+    print("Employers:")
+    for employer in employers:
+        print(
+            f"ID: {employer.id}, Name: {employer.name}, "
+            f"Additional Info: {employer.additional_info}"
+        )
+
+
+def print_work_hours(work_hours):
+    """
+    Print the list of work hours.
+    """
+    print("Work Hours:")
+    for work_hour in work_hours:
+        print(
+            f"ID: {work_hour.id}, Date: {work_hour.date}, "
+            f"Hours: {work_hour.hours}"
+        )
+
+
 def main_menu():
     """
     Display the main menu and handle user input.
@@ -44,21 +68,11 @@ def main_menu():
             print("Work hours added successfully.")
         elif choice == "3":
             employers = get_all_employers()
-            print("Employers:")
-            for employer in employers:
-                print(
-                    f"ID: {employer.id}, Name: {employer.name}, "
-                    f"Additional Info: {employer.additional_info}"
-                )
+            print_employers(employers)
         elif choice == "4":
             employer_id = int(input("Enter employer ID: "))
             work_hours = get_work_hours_by_employer(employer_id)
-            print("Work Hours:")
-            for work_hour in work_hours:
-                print(
-                    f"ID: {work_hour.id}, Date: {work_hour.date}, "
-                    f"Hours: {work_hour.hours}"
-                )
+            print_work_hours(work_hours)
         elif choice == "5":
             employer_id = int(input("Enter employer ID: "))
             month = int(input("Enter month: "))
@@ -88,4 +102,3 @@ def main_menu():
 
 if __name__ == '__main__':
     main_menu()
-    
