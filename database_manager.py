@@ -1,9 +1,15 @@
+"""
+Module: database_manager
+Description: Provides functions to manage the database for the WorkTimeTracker application.
+"""
+
 import datetime
 import calendar
-from sqlmodel import SQLModel, create_engine, Session, select
-from database_models import Employer, WorkHours
 from typing import Optional
+from sqlmodel import SQLModel, create_engine, Session, select
 from sqlalchemy import func
+from database_models import Employer, WorkHours
+
 
 engine = create_engine("sqlite:///worktimetracker.db", echo=True)
 session = Session(bind=engine)
