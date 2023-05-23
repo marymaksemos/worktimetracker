@@ -46,13 +46,19 @@ def main_menu():
             employers = get_all_employers()
             print("Employers:")
             for employer in employers:
-                print(f"ID: {employer.id}, Name: {employer.name}, Additional Info: {employer.additional_info}")
+                print(
+                    f"ID: {employer.id}, Name: {employer.name}, "
+                    f"Additional Info: {employer.additional_info}"
+                )
         elif choice == "4":
             employer_id = int(input("Enter employer ID: "))
             work_hours = get_work_hours_by_employer(employer_id)
             print("Work Hours:")
             for work_hour in work_hours:
-                print(f"ID: {work_hour.id}, Date: {work_hour.date}, Hours: {work_hour.hours}")
+                print(
+                    f"ID: {work_hour.id}, Date: {work_hour.date}, "
+                    f"Hours: {work_hour.hours}"
+                )
         elif choice == "5":
             employer_id = int(input("Enter employer ID: "))
             month = int(input("Enter month: "))
@@ -63,8 +69,12 @@ def main_menu():
             employer_id = int(input("Enter employer ID: "))
             month = int(input("Enter month: "))
             year = int(input("Enter year: "))
-            pre_tax_earnings = calculate_monthly_earnings(employer_id, month, year, pre_tax=True)
-            post_tax_earnings = calculate_monthly_earnings(employer_id, month, year, pre_tax=False)
+            pre_tax_earnings = calculate_monthly_earnings(
+                employer_id, month, year, pre_tax=True
+            )
+            post_tax_earnings = calculate_monthly_earnings(
+                employer_id, month, year, pre_tax=False
+            )
             print(f"Pre-tax earnings for the month: {pre_tax_earnings}")
             print(f"Post-tax earnings for the month: {post_tax_earnings}")
         elif choice == "0":
