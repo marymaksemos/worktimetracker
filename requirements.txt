@@ -1,5 +1,6 @@
 # requirements.txt
 
+wheel
 sqlalchemy==1.4.25
 sqlmodel==0.0.8
 pylint==2.9.6
