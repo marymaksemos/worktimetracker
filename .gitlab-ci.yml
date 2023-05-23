@@ -1,0 +1,25 @@
+stages:
+  - bulid
+#   - test
+
+bulid:
+  stage: bulid
+  image: python:3.9-alpine
+  before_script:
+    - apk add --no-cache build-base
+    - pip install -r requirements.txt
+
+  script:
+    - flake8 --max-line-length=79 main.py database_manager.py
+    - pylint main.py database_manager.py
+
+# unittest:
+#   stage: test
+#   image: python:3.9-alpine
+#   script:
+#     - apk add --no-cache build-base
+#     - pip install -r requirements.txt
+#     - python -m unittest discover
+
+only:
+  - master  # Specify the branch where you want the pipeline to run
