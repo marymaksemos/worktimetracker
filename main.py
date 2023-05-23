@@ -5,6 +5,18 @@ from database_manager import add_employer, add_work_hours, get_all_employers, ge
 from database_models import Employer, WorkHours
 
 def main_menu():
+    """
+    Displays the main menu and handles user input to perform different actions.
+
+    Options:
+    1. Add Employer
+    2. Add Work Hours
+    3. View Employers
+    4. View Work Hours
+    5. Calculate Monthly Hours
+    6. Calculate Monthly Earnings
+    0. Exit
+    """
     print("WorkTimeTracker")
     print("--------------")
     print("1. Add Employer")
