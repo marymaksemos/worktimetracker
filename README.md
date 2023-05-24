@@ -14,7 +14,7 @@ Usage:
         - The application will display a menu with options to perform various tasks.
         - Enter the corresponding option number to select a task and follow the prompts to provide the required information.
         - The application will perform the selected task and display the results or success messages.
-
+         -python -m unittest discover -s tests -p test_database_manager.py
 
 Conclusion:
 
