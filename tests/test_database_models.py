@@ -4,7 +4,7 @@ Description: Unit tests for the database_models module.
 """
 
 import unittest
-from app.database_models import Employer, WorkHours
+from app.database.database_models import Employer, WorkHours
 
 
 class TestDatabaseModels(unittest.TestCase):

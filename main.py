@@ -3,7 +3,7 @@ Module: main
 Description: WorkTimeTracker CLI application.
 """
 
-from app.database_manager import (
+from app.database.database_manager import (
     add_employer,
     add_work_hours,
     get_all_employers,
