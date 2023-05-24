@@ -14,11 +14,11 @@ build:
     - flake8 --max-line-length=79 app/ tests/
     - pylint app/ tests/
 
-# unittest:
-#   stage: test
-#   image: python:3.9-alpine
-#   script:
-#     - apk add --no-cache build-base
-#     - pip install -r requirements.txt
-#     - python -m unittest discover
+unittest:
+  stage: test
+  image: python:3.9-alpine
+  script:
+    - apk add --no-cache build-base
+    - pip install -r requirements.txt
+    - python -m unittest discover
 
