@@ -30,7 +30,11 @@ class DatabaseManagerTestCase(unittest.TestCase):
 
     def test_add_employer(self):
         """Test adding an employer."""
-        employer = Employer(name="Test Employer", additional_info="Some info", hourly_rate=10.0)
+        employer = Employer(
+            name="Test Employer",
+            additional_info="Some info",
+            hourly_rate=10.0
+        )
         self.session.add(employer)
         self.session.commit()
 
@@ -42,11 +46,19 @@ class DatabaseManagerTestCase(unittest.TestCase):
 
     def test_add_work_hours(self):
         """Test adding work hours."""
-        employer = Employer(name="Test Employer", additional_info="Some info", hourly_rate=10.0)
+        employer = Employer(
+            name="Test Employer",
+            additional_info="Some info",
+            hourly_rate=10.0
+        )
         self.session.add(employer)
         self.session.commit()
 
-        work_hours = WorkHours(employer_id=employer.id, date="2023-05-01", hours=8.0)
+        work_hours = WorkHours(
+            employer_id=employer.id,
+            date="2023-05-01",
+            hours=8.0
+        )
         self.session.add(work_hours)
         self.session.commit()
 
@@ -58,11 +70,19 @@ class DatabaseManagerTestCase(unittest.TestCase):
 
     def test_calculate_monthly_earnings(self):
         """Test calculating monthly earnings."""
-        employer = Employer(name="Test Employer", additional_info="Some info", hourly_rate=10.0)
+        employer = Employer(
+            name="Test Employer",
+            additional_info="Some info",
+            hourly_rate=10.0
+        )
         self.session.add(employer)
         self.session.commit()
 
-        work_hours = WorkHours(employer_id=employer.id, date="2023-05-01", hours=8.0)
+        work_hours = WorkHours(
+            employer_id=employer.id,
+            date="2023-05-01",
+            hours=8.0
+        )
         self.session.add(work_hours)
         self.session.commit()
 
@@ -70,7 +90,7 @@ class DatabaseManagerTestCase(unittest.TestCase):
             select(
                 WorkHours.employer_id,
                 WorkHours.date,
-                (WorkHours.hours * Employer.hourly_rate).label("earnings"),
+                (WorkHours.hours * Employer.hourly_rate).label("earnings")
             )
             .join(Employer)
             .group_by(WorkHours.employer_id, WorkHours.date)
