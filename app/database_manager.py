@@ -9,7 +9,7 @@ import calendar
 from typing import Optional
 from sqlmodel import SQLModel, create_engine, Session, select
 from sqlalchemy import func
-from database_models import Employer, WorkHours
+from app.database_models import Employer, WorkHours
 
 
 engine = create_engine("sqlite:///worktimetracker.db", echo=True)
